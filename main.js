@@ -22,7 +22,7 @@ function int_to_str(input) {
     };
 
     var str = "";
-    // input = +input; // Uncomment this line to disregard leading zeros.
+    // input = +input; // Uncomment this line to ignore leading zeros.
     var input_str = input.toString();
     for (var i in input_str) {
         str += dict[input_str.charAt(i)];
