@@ -1,7 +1,10 @@
 var input = process.argv.slice(2);
 
 for (var x in input) {
-    process.stdout.write(int_to_str(input[x]) + '\n');
+    process.stdout.write(int_to_str(input[x]));
+    if (x != input.length - 1) {
+        process.stdout.write(',');
+    }
 }
 
 function int_to_str(input) {
