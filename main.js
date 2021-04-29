@@ -1,8 +1,8 @@
 var input = process.argv.slice(2);
 
-for (var x in input) {
-    process.stdout.write(int_to_str(input[x]));
-    if (x != input.length - 1) {
+for (var i in input) {
+    process.stdout.write(int_to_str(input[i]));
+    if (i != input.length - 1) {
         process.stdout.write(',');
     }
 }
@@ -22,9 +22,10 @@ function int_to_str(input) {
     };
 
     var str = "";
-    while (input > 0) {
-        str = dict[input % 10] + str;
-        input = Math.floor(input / 10);
+    // input = +input; // Uncomment this line to disregard leading zeros.
+    var input_str = input.toString();
+    for (var i in input_str) {
+        str += dict[input_str.charAt(i)];
     }
     return str;
 }
